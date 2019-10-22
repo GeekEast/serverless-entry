@@ -52,7 +52,20 @@ sls invoke local -f hello
 sls invoke local -f hello -d 'Hello World'
 ```
 - Pass Json String into lambda function
+  > You could use `console.log()` to debug
 ```sh
-sls invoke local -f hello -d '{"first": 1, "Second":10}'
+sls invoke local -f hello -d '{"first": 1, "second":10}'
+```
+
+### Restful Server
+- `serverless-offline` **mimic** aws `lambda function` on `local` environemnt
+```sh
+npm init -y
+yarn add --dev serverless-offline
+```
+- add to `serverless.yml`
+```yml
+plugins:
+  - serverless-offline
 ```
 

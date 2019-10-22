@@ -15,6 +15,9 @@ provider:
   stage: dev
   versionFunctions: false
 
+plugins:
+  - serverless-offline
+
 functions:
   hello:
     handler: handler.hello
