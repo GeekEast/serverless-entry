@@ -82,4 +82,10 @@ functions:
 ```sh
 serverless offline
 ```
+### Deployment
+```sh
+sls deploy
+```
+- `AWS Lambda `> `Applications`
+
 
