@@ -7,6 +7,7 @@ service:
 # Add the serverless-webpack plugin
 plugins:
   - serverless-webpack
+  - serverless-offline
 
 provider:
   name: aws
@@ -14,9 +15,6 @@ provider:
   region: ap-southeast-2
   stage: dev
   versionFunctions: false
-
-plugins:
-  - serverless-offline
 
 functions:
   hello:

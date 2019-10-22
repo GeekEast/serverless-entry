@@ -57,7 +57,7 @@ sls invoke local -f hello -d 'Hello World'
 sls invoke local -f hello -d '{"first": 1, "second":10}'
 ```
 
-### Restful Server
+### Restful API
 - `serverless-offline` **mimic** aws `lambda function` on `local` environemnt
 ```sh
 npm init -y
@@ -67,5 +67,19 @@ yarn add --dev serverless-offline
 ```yml
 plugins:
   - serverless-offline
+```
+- Add Routers (`Already` have)
+```yml
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: hello
+```
+- run serverless offline
+```sh
+serverless offline
 ```
 
