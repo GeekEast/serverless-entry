@@ -46,6 +46,6 @@ sls invoke local -f hello
 ```
 - Pass data into lambda function
   > The `event` object is actually the `data` passed into the function
-```
+```sh
 sls invoke local -f hello -d 'Hello World'
 ```
