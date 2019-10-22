@@ -40,12 +40,19 @@ functions:
           method: get
           path: hello
 ```
+
+### Local Development
 - run locally
 ```sh
 sls invoke local -f hello
 ```
-- Pass data into lambda function
+- Pass `string` data into lambda function
   > The `event` object is actually the `data` passed into the function
 ```sh
 sls invoke local -f hello -d 'Hello World'
 ```
+- Pass Json String into lambda function
+```sh
+sls invoke local -f hello -d '{"first": 1, "Second":10}'
+```
+
