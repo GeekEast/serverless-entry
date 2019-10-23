@@ -1,5 +1,4 @@
-## Project 1
-### Prerequisite
+## Prerequisite
 - AWS Account - Set Credentials with `AccessKey` and `SecrectKey`
 - AWS `Cli` & `Serverless`
 ```sh
@@ -9,7 +8,11 @@ npm install -g aws-cli serverless
 ```sh
 sls config credentials --provider aws --key [AccessKey] --secrect [SecretKey] --profile [UserName]
 ```
-### [Examples](https://github.com/serverless/examples)
+- [Code Examples](https://github.com/serverless/examples)
+- [Examples](https://serverless.com/examples/)
+
+## Project 1
+
 ### Hello World
 - create a project with Serverless [Template](https://serverless.com/framework/docs/providers/aws/cli-reference/create#available-templates)
 ```sh
@@ -58,7 +61,7 @@ sls invoke local -f hello -d 'Hello World'
 sls invoke local -f hello -d '{"first": 1, "second":10}'
 ```
 
-### Restful API
+### Restful API Local Server
 - `serverless-offline` **mimic** aws `lambda function` on `local` environemnt
 ```sh
 npm init -y
@@ -125,11 +128,19 @@ functions:
       - schedule: rate(1 minute) # or cron syntax
 ```
 ### Local Development
-- You can use `locally` `invoke`
+- Install
+```sh
+yarn add --dev serverless-offline-scheduler
 ```
-sls invoke local -f hello 
+- config `yml` file
+```yml
+plugins:
+  - serverless-offline-scheduler
 ```
-- `serveless offline` **doesn't** fit into this.
+- run cron job
+```sh
+sls schedule
+```
 ### Deploy
 ```sh
 sls deploy -s dev -f hello
@@ -143,5 +154,91 @@ sls logs -f hello -s dev -t
 sls remove
 ```
 
+## Project 3
+
+## [AWS CLI Reference](https://serverless.com/framework/docs/providers/aws/cli-reference/)
+### 0. Shorthand
+```sh
+serverless
+sls
+```
+```sh
+--template
+-t
+```
+### [1. Boilerplate](https://serverless.com/framework/docs/providers/aws/cli-reference/create#available-templates)
+- create from template inside current folder
+```sh
+sls create -t aws-nodejs-typescript
+```
+- create from template in a new folder
+```sh
+sls create -t aws-nodejs-typescript -p [project_name]
+```
+
+### 2. Deployment and Removal
+- deploy things in `default` stage which is set in `yml` file
+```sh
+sls deploy
+```
+- deploy things in the `dev` stage
+```sh
+sls deploy -s dev
+```
+- remove `current` project
+```
+sls remove
+```
+- remove things in the `dev` stage
+```sh
+sls remove -s dev
+```
+- remove function in a specified regin
+```sh
+sls remove -s dev -r us-east-1
+```
+
+### [4. Information](https://serverless.com/framework/docs/providers/aws/cli-reference/info/)
+- get current project information
+```sh
+sls info
+sks info -s dev
+```
+
+### [5. Logging](https://serverless.com/framework/docs/providers/aws/cli-reference/logs/)
+```sh
+sls logs -f my_function # by default in dev stage,
+sls logs -f my_function -s production -r us-west-2 # as many logs as it can
+sls logs -f my_function --startTime 5m # last 5 minutes logs
+sls logs -f my)_function -t # logging in real time manner
+```
+
+### 6. Invoke
+- [Local](https://serverless.com/framework/docs/providers/aws/cli-reference/invoke-local/)
+```sh
+sls invoke local -f my_function # invoke without data
+sls invoke local -f my_function -d "sth" # input string data
+sls invoke local -f my_function -p data.json # input data from json
+```
+- [Cloud](https://serverless.com/framework/docs/providers/aws/cli-reference/invoke/)
+```sh
+# invoke without data input
+serverless invoke --function functionName --stage dev --region us-east-1
+# invoke with data passed as string
+serverless invoke --function functionName --stage dev --region us-east-1 --data "hello world"
+# invoke with data input from json file
+serverless invoke --function functionName --stage dev --region us-east-1 --path lib/data.json
+# invoke with logging function open
+serverless invoke --function functionName --stage dev --region us-east-1 --log
+```
+
+### [7.Plugins](https://github.com/serverless/plugins)
+```sh
+sls plugin list
+```
+- `serverless-offline`: local API server
+- `serverless-offline-scheduler`: local cron server
+
+### [8. More](https://serverless.com/framework/docs/)
 
 

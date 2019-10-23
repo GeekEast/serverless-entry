@@ -8,6 +8,7 @@ service:
 plugins:
   - serverless-webpack
   - serverless-offline
+  - serverless-offline-scheduler
 
 provider:
   name: aws
