@@ -1,3 +1,4 @@
+## Project 1
 ### Prerequisite
 - AWS Account - Set Credentials with `AccessKey` and `SecrectKey`
 - AWS `Cli` & `Serverless`
@@ -84,8 +85,30 @@ serverless offline
 ```
 ### Deployment
 ```sh
-sls deploy
+sls deploy -f hello # only deploy hello function to dev stage
+sls deploy # all functions will be deployed to dev stage
+```
+- deploy to production stage
+```sh
+sls deploy -s production -f hello
 ```
 - `AWS Lambda `> `Applications`
+
+### Logging
+- See the log of `last 15 minutes` of the `hello` function in `dev` stage
+```sh
+sls logs -f hello -s dev --startTime 15m
+```
+
+### Remove 
+```sh
+sls remove -s dev # remove all things in dev stage
+```
+
+## Project 2
+- `cron` jobs: `scheduled` jobs
+- 
+
+
 
 
