@@ -3,15 +3,15 @@
 ## Table Of Content
 
 - [Prerequisite](#prerequisite)
-- [Project 1](#project-1)
-  - [Hello World](#hello-world)
+- [Project 1: Hello World](#project-1-hello-world)
+  - [Initialization](#initialization)
   - [Local Development](#local-development)
   - [Restful API Local Server](#restful-api-local-server)
   - [Deployment](#deployment)
   - [Logging](#logging)
   - [Remove](#remove)
-- [Project 2](#project-2)
-  - [Scheduled Function](#scheduled-function)
+- [Project 2: Scheduled Function](#project-2-scheduled-function)
+  - [Initialization](#initialization-1)
   - [Local Development](#local-development-1)
   - [Deploy](#deploy)
   - [Logging in real-time](#logging-in-real-time)
@@ -43,9 +43,9 @@ sls config credentials --provider aws --key [AccessKey] --secrect [SecretKey] --
 - [Code Examples](https://github.com/serverless/examples)
 - [Examples](https://serverless.com/examples/)
 
-## Project 1
+## Project 1: Hello World
 
-### Hello World
+### Initialization
 - create a project with Serverless [Template](https://serverless.com/framework/docs/providers/aws/cli-reference/create#available-templates)
 ```sh
 sls create -t aws-nodejs-typescript
@@ -142,9 +142,8 @@ sls logs -f hello -s dev --startTime 15m
 sls remove -s dev # remove all things in dev stage
 ```
 
-## Project 2
-
-### Scheduled Function
+## Project 2: Scheduled Function
+### Initialization
 - [cron jobs](https://docs.aws.amazon.com/lambda/latest/dg/tutorial-scheduled-events-schedule-expressions.html): `scheduled` jobs
 ```javascript
 import 'source-map-support/register';
