@@ -1,4 +1,25 @@
-## Prerequisite
+<!-- TOC -->
+
+- [Prerequisite](#prerequisite)
+- [Project 1](#project-1)
+  - [Hello World](#hello-world)
+  - [Local Development](#local-development)
+  - [Restful API Local Server](#restful-api-local-server)
+  - [Deployment](#deployment)
+  - [Logging](#logging)
+  - [Remove](#remove)
+- [Project 2](#project-2)
+  - [Scheduled Function](#scheduled-function)
+  - [Local Development](#local-development)
+  - [Deploy](#deploy)
+  - [Logging in real-time](#logging-in-real-time)
+  - [Remove](#remove)
+- [AWS CLI Reference](#aws-cli-reference)
+  - [Shorthand](#shorthand)
+
+<!-- /TOC -->
+
+## .1. Prerequisite
 - AWS Account - Set Credentials with `AccessKey` and `SecrectKey`
 - AWS `Cli` & `Serverless`
 ```sh
@@ -11,9 +32,9 @@ sls config credentials --provider aws --key [AccessKey] --secrect [SecretKey] --
 - [Code Examples](https://github.com/serverless/examples)
 - [Examples](https://serverless.com/examples/)
 
-## Project 1
+## .2. Project 1
 
-### Hello World
+### .2.1. Hello World
 - create a project with Serverless [Template](https://serverless.com/framework/docs/providers/aws/cli-reference/create#available-templates)
 ```sh
 sls create -t aws-nodejs-typescript
@@ -45,7 +66,7 @@ functions:
           path: hello
 ```
 
-### Local Development
+### .2.2. Local Development
 - run locally
 ```sh
 sls invoke local -f hello
@@ -61,7 +82,7 @@ sls invoke local -f hello -d 'Hello World'
 sls invoke local -f hello -d '{"first": 1, "second":10}'
 ```
 
-### Restful API Local Server
+### .2.3. Restful API Local Server
 - `serverless-offline` **mimic** aws `lambda function` on `local` environemnt
 ```sh
 npm init -y
@@ -87,7 +108,8 @@ functions:
 # lancuh the lambda functiuon as a server
 serverless offline
 ```
-### Deployment
+
+### .2.4. Deployment
 ```sh
 sls deploy # all functions will be deployed to dev stage
 sls deploy -f hello # only deploy hello function to dev stage
@@ -98,19 +120,20 @@ sls deploy -s production -f hello
 ```
 - `AWS Lambda `> `Applications`
 
-### Logging
+### .2.5. Logging
 - See the log of `last 15 minutes` of the `hello` function in `dev` stage
 ```sh
 sls logs -f hello -s dev --startTime 15m
 ```
 
-### Remove 
+### .2.6. Remove 
 ```sh
 sls remove -s dev # remove all things in dev stage
 ```
 
-## Project 2
-### Scheduled Function
+## .3. Project 2
+
+### .3.1. Scheduled Function
 - [cron jobs](https://docs.aws.amazon.com/lambda/latest/dg/tutorial-scheduled-events-schedule-expressions.html): `scheduled` jobs
 ```javascript
 import 'source-map-support/register';
@@ -127,7 +150,8 @@ functions:
     events:
       - schedule: rate(1 minute) # or cron syntax
 ```
-### Local Development
+
+### .3.2. Local Development
 - Install
 ```sh
 yarn add --dev serverless-offline-scheduler
@@ -141,21 +165,25 @@ plugins:
 ```sh
 sls schedule
 ```
-### Deploy
+
+### .3.3. Deploy
 ```sh
 sls deploy -s dev -f hello
 ```
-### Logging in real-time
+
+### .3.4. Logging in real-time
 ```sh
 sls logs -f hello -s dev -t
 ```
-### Remove
+
+### .3.5. Remove
 ```sh
 sls remove
 ```
 
-## [AWS CLI Reference](https://serverless.com/framework/docs/providers/aws/cli-reference/)
-### 0. Shorthand
+## .4. [AWS CLI Reference](https://serverless.com/framework/docs/providers/aws/cli-reference/)
+
+### .4.1. Shorthand
 ```sh
 serverless
 sls
@@ -220,13 +248,12 @@ sls invoke local -f my_function -p data.json # input data from json
 ```
 - [Cloud](https://serverless.com/framework/docs/providers/aws/cli-reference/invoke/)
 ```sh
-# invoke without data input
 serverless invoke --function functionName --stage dev --region us-east-1
-# invoke with data passed as string
+
 serverless invoke --function functionName --stage dev --region us-east-1 --data "hello world"
-# invoke with data input from json file
+
 serverless invoke --function functionName --stage dev --region us-east-1 --path lib/data.json
-# invoke with logging function open
+
 serverless invoke --function functionName --stage dev --region us-east-1 --log
 ```
 
