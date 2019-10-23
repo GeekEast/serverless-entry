@@ -1,3 +1,33 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Prerequisite](#prerequisite)
+- [Project 1](#project-1)
+  - [Hello World](#hello-world)
+  - [Local Development](#local-development)
+  - [Restful API Local Server](#restful-api-local-server)
+  - [Deployment](#deployment)
+  - [Logging](#logging)
+  - [Remove](#remove)
+- [Project 2](#project-2)
+  - [Scheduled Function](#scheduled-function)
+  - [Local Development](#local-development-1)
+  - [Deploy](#deploy)
+  - [Logging in real-time](#logging-in-real-time)
+  - [Remove](#remove-1)
+- [AWS CLI Reference](#aws-cli-reference)
+  - [Shorthand](#shorthand)
+  - [Boilerplate](#boilerplate)
+  - [Deployment and Removal](#deployment-and-removal)
+  - [Information](#information)
+  - [Logging](#logging-1)
+  - [Invoke](#invoke)
+  - [Plugins](#plugins)
+  - [More](#more)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 
 ## Prerequisite
