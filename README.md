@@ -154,8 +154,6 @@ sls logs -f hello -s dev -t
 sls remove
 ```
 
-## Project 3
-
 ## [AWS CLI Reference](https://serverless.com/framework/docs/providers/aws/cli-reference/)
 ### 0. Shorthand
 ```sh
@@ -232,7 +230,7 @@ serverless invoke --function functionName --stage dev --region us-east-1 --path 
 serverless invoke --function functionName --stage dev --region us-east-1 --log
 ```
 
-### [7.Plugins](https://github.com/serverless/plugins)
+### [7. Plugins](https://github.com/serverless/plugins)
 ```sh
 sls plugin list
 ```
