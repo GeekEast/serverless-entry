@@ -192,13 +192,13 @@ sls
 --template
 -t
 ```
-### [1. Boilerplate](https://serverless.com/framework/docs/providers/aws/cli-reference/create#available-templates)
+### [Boilerplate](https://serverless.com/framework/docs/providers/aws/cli-reference/create#available-templates)
 - create from template inside current folder
 ```sh
 sls create -t aws-nodejs-typescript
 ```
 
-### 2. Deployment and Removal
+### Deployment and Removal
 - deploy things in `default` stage which is set in `yml` file
 ```sh
 sls deploy
@@ -220,14 +220,14 @@ sls remove -s dev
 sls remove -s dev -r us-east-1
 ```
 
-### [4. Information](https://serverless.com/framework/docs/providers/aws/cli-reference/info/)
+### [Information](https://serverless.com/framework/docs/providers/aws/cli-reference/info/)
 - get current project information
 ```sh
 sls info
 sks info -s dev
 ```
 
-### [5. Logging](https://serverless.com/framework/docs/providers/aws/cli-reference/logs/)
+### [Logging](https://serverless.com/framework/docs/providers/aws/cli-reference/logs/)
 ```sh
 sls logs -f my_function # by default in dev stage,
 sls logs -f my_function -s production -r us-west-2 # as many logs as it can
@@ -235,7 +235,7 @@ sls logs -f my_function --startTime 5m # last 5 minutes logs
 sls logs -f my)_function -t # logging in real time manner
 ```
 
-### 6. Invoke
+### Invoke
 - [Local](https://serverless.com/framework/docs/providers/aws/cli-reference/invoke-local/)
 ```sh
 sls invoke local -f my_function # invoke without data
@@ -253,13 +253,13 @@ serverless invoke --function functionName --stage dev --region us-east-1 --path 
 serverless invoke --function functionName --stage dev --region us-east-1 --log
 ```
 
-### [7. Plugins](https://github.com/serverless/plugins)
+### [Plugins](https://github.com/serverless/plugins)
 ```sh
 sls plugin list
 ```
 - `serverless-offline`: local API server
 - `serverless-offline-scheduler`: local cron server
 
-### [8. More](https://serverless.com/framework/docs/)
+### [More](https://serverless.com/framework/docs/)
 
 
