@@ -34,7 +34,7 @@
   "homepage": "https://github.com/GeekEast/serverless-entry#readme",
   "husky": {
     "hooks": {
-      "pre-commit": "doctoc README.md --github --title \"Table Of Content\" && git add -A"
+      "pre-commit": "doctoc README.md --github --title \"## Table Of Content\" && git add -A"
     }
   }
 }
