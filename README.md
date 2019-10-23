@@ -19,7 +19,7 @@
 
 <!-- /TOC -->
 
-## .1. Prerequisite
+## Prerequisite
 - AWS Account - Set Credentials with `AccessKey` and `SecrectKey`
 - AWS `Cli` & `Serverless`
 ```sh
@@ -32,9 +32,9 @@ sls config credentials --provider aws --key [AccessKey] --secrect [SecretKey] --
 - [Code Examples](https://github.com/serverless/examples)
 - [Examples](https://serverless.com/examples/)
 
-## .2. Project 1
+## Project 1
 
-### .2.1. Hello World
+### Hello World
 - create a project with Serverless [Template](https://serverless.com/framework/docs/providers/aws/cli-reference/create#available-templates)
 ```sh
 sls create -t aws-nodejs-typescript
@@ -66,7 +66,7 @@ functions:
           path: hello
 ```
 
-### .2.2. Local Development
+### Local Development
 - run locally
 ```sh
 sls invoke local -f hello
@@ -82,7 +82,7 @@ sls invoke local -f hello -d 'Hello World'
 sls invoke local -f hello -d '{"first": 1, "second":10}'
 ```
 
-### .2.3. Restful API Local Server
+### Restful API Local Server
 - `serverless-offline` **mimic** aws `lambda function` on `local` environemnt
 ```sh
 npm init -y
@@ -109,7 +109,7 @@ functions:
 serverless offline
 ```
 
-### .2.4. Deployment
+### Deployment
 ```sh
 sls deploy # all functions will be deployed to dev stage
 sls deploy -f hello # only deploy hello function to dev stage
@@ -120,20 +120,20 @@ sls deploy -s production -f hello
 ```
 - `AWS Lambda `> `Applications`
 
-### .2.5. Logging
+### Logging
 - See the log of `last 15 minutes` of the `hello` function in `dev` stage
 ```sh
 sls logs -f hello -s dev --startTime 15m
 ```
 
-### .2.6. Remove 
+### Remove 
 ```sh
 sls remove -s dev # remove all things in dev stage
 ```
 
-## .3. Project 2
+## Project 2
 
-### .3.1. Scheduled Function
+### Scheduled Function
 - [cron jobs](https://docs.aws.amazon.com/lambda/latest/dg/tutorial-scheduled-events-schedule-expressions.html): `scheduled` jobs
 ```javascript
 import 'source-map-support/register';
@@ -151,7 +151,7 @@ functions:
       - schedule: rate(1 minute) # or cron syntax
 ```
 
-### .3.2. Local Development
+### Local Development
 - Install
 ```sh
 yarn add --dev serverless-offline-scheduler
@@ -166,24 +166,24 @@ plugins:
 sls schedule
 ```
 
-### .3.3. Deploy
+### Deploy
 ```sh
 sls deploy -s dev -f hello
 ```
 
-### .3.4. Logging in real-time
+### Logging in real-time
 ```sh
 sls logs -f hello -s dev -t
 ```
 
-### .3.5. Remove
+### Remove
 ```sh
 sls remove
 ```
 
-## .4. [AWS CLI Reference](https://serverless.com/framework/docs/providers/aws/cli-reference/)
+## [AWS CLI Reference](https://serverless.com/framework/docs/providers/aws/cli-reference/)
 
-### .4.1. Shorthand
+### Shorthand
 ```sh
 serverless
 sls
