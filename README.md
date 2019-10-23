@@ -1,23 +1,4 @@
-<!-- TOC -->
-
-- [Prerequisite](#prerequisite)
-- [Project 1](#project-1)
-  - [Hello World](#hello-world)
-  - [Local Development](#local-development)
-  - [Restful API Local Server](#restful-api-local-server)
-  - [Deployment](#deployment)
-  - [Logging](#logging)
-  - [Remove](#remove)
-- [Project 2](#project-2)
-  - [Scheduled Function](#scheduled-function)
-  - [Local Development](#local-development)
-  - [Deploy](#deploy)
-  - [Logging in real-time](#logging-in-real-time)
-  - [Remove](#remove)
-- [AWS CLI Reference](#aws-cli-reference)
-  - [Shorthand](#shorthand)
-
-<!-- /TOC -->
+[toc]
 
 ## Prerequisite
 - AWS Account - Set Credentials with `AccessKey` and `SecrectKey`
