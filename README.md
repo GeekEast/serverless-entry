@@ -197,10 +197,6 @@ sls
 ```sh
 sls create -t aws-nodejs-typescript
 ```
-- create from template in a new folder
-```sh
-sls create -t aws-nodejs-typescript -p [project_name]
-```
 
 ### 2. Deployment and Removal
 - deploy things in `default` stage which is set in `yml` file
