@@ -16,7 +16,7 @@
   - [Deploy](#deploy)
   - [Logging in real-time](#logging-in-real-time)
   - [Remove](#remove-1)
-- [AWS CLI Reference](#aws-cli-reference)
+- [Serverless CLI Reference for AWS](#serverless-cli-reference-for-aws)
   - [Shorthand](#shorthand)
   - [Boilerplate](#boilerplate)
   - [Deployment and Removal](#deployment-and-removal)
@@ -27,8 +27,6 @@
   - [More](#more)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-
 
 ## Prerequisite
 - AWS Account - Set Credentials with `AccessKey` and `SecrectKey`
@@ -191,7 +189,7 @@ sls logs -f hello -s dev -t
 sls remove
 ```
 
-## [AWS CLI Reference](https://serverless.com/framework/docs/providers/aws/cli-reference/)
+## [Serverless CLI Reference for AWS](https://serverless.com/framework/docs/providers/aws/cli-reference/)
 
 ### Shorthand
 ```sh
