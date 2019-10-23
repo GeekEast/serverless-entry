@@ -20,6 +20,7 @@ functions:
   hello:
     handler: handler.hello
     events:
-      - http:
-          method: get
-          path: /{name}
+      # - http:
+      #     method: get
+      #     path: /{name}
+      - schedule: rate(1 minute) # or cron syntax

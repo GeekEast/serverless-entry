@@ -81,12 +81,13 @@ functions:
 ```
 - run serverless offline
 ```sh
+# lancuh the lambda functiuon as a server
 serverless offline
 ```
 ### Deployment
 ```sh
-sls deploy -f hello # only deploy hello function to dev stage
 sls deploy # all functions will be deployed to dev stage
+sls deploy -f hello # only deploy hello function to dev stage
 ```
 - deploy to production stage
 ```sh
@@ -106,9 +107,41 @@ sls remove -s dev # remove all things in dev stage
 ```
 
 ## Project 2
-- `cron` jobs: `scheduled` jobs
-- 
-
+### Scheduled Function
+- [cron jobs](https://docs.aws.amazon.com/lambda/latest/dg/tutorial-scheduled-events-schedule-expressions.html): `scheduled` jobs
+```javascript
+import 'source-map-support/register';
+export const hello = async (event, _context) => {
+  const time = new Date();
+  console.log(`Your cron function "${_context.functionName}" ran at ${time}`);
+}
+```
+- modify `serverless.yml` file to schedule function
+```yml
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - schedule: rate(1 minute) # or cron syntax
+```
+### Local Development
+- You can use `locally` `invoke`
+```
+sls invoke local -f hello 
+```
+- `serveless offline` **doesn't** fit into this.
+### Deploy
+```sh
+sls deploy -s dev -f hello
+```
+### Logging in real-time
+```sh
+sls logs -f hello -s dev -t
+```
+### Remove
+```sh
+sls remove
+```
 
 
 

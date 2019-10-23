@@ -1,12 +1,6 @@
-import { APIGatewayProxyHandler } from 'aws-lambda';
 import 'source-map-support/register';
 
-export const hello: APIGatewayProxyHandler = async (event, _context) => {
-  // const name = event.pathParameters.name;
-  // return {
-  //   statusCode: 200,
-  //   body: JSON.stringify({
-  //     name: name,
-  //   }),
-  // };
+export const hello = async (event, _context) => {
+  const time = new Date();
+  console.log(`Your cron function "${_context.functionName}" ran at ${time}`);
 }
