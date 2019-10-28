@@ -240,7 +240,7 @@ sks info -s dev
 sls logs -f my_function # by default in dev stage,
 sls logs -f my_function -s production -r us-west-2 # as many logs as it can
 sls logs -f my_function --startTime 5m # last 5 minutes logs
-sls logs -f my)_function -t # logging in real time manner
+sls logs -f my_function -t # logging in real time manner
 ```
 
 ### Invoke
